@@ -46,7 +46,7 @@ conversation = [
 chatbot.set_trainer(ListTrainer)
 chatbot.train(conversation)
 chatbot.set_trainer(ChatterBotCorpusTrainer)
-
+"""
 chatbot.train(
     "chatterbot.corpus.english.ai",
     "chatterbot.corpus.english.botprofile",
@@ -57,7 +57,7 @@ chatbot.train(
     "chatterbot.corpus.english.psychology",
     "chatterbot.corpus.english.greetings",
 )
-
+"""
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	if (request.method == 'POST'):
@@ -79,4 +79,4 @@ def get_message(message):
 	return jsonify({'result' : str(response)})
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=False)
